@@ -16,11 +16,12 @@ package cmd
 
 import (
 	"bytes"
-	"gen/cmd/file"
-	"github.com/spf13/cobra"
 	"io"
 	"os"
 	"os/exec"
+
+	"github.com/cyjme/gen/cmd/file"
+	"github.com/spf13/cobra"
 )
 
 // apiCmd represents the api command

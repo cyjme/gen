@@ -14,7 +14,7 @@
 
 package main
 
-import "gen/cmd"
+import "github.com/cyjme/gen/cmd"
 
 func main() {
 	cmd.Execute()

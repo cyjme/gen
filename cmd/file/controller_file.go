@@ -1,16 +1,17 @@
 package file
 
 import (
-	"gen/cmd/vars"
-	"gen/util"
 	"os"
 	"strings"
+
+	"github.com/cyjme/gen/cmd/vars"
+	"github.com/cyjme/gen/util"
 )
 
 type ControllerFile struct {
-	ModelName   string
-	Tpl         string
-	Content     string
+	ModelName string
+	Tpl       string
+	Content   string
 }
 
 func NewControllerFile(modelName string) *ControllerFile {

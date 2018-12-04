@@ -2,13 +2,14 @@ package cmd
 
 import (
 	"bytes"
-	"gen/util"
 	"io"
 	"io/ioutil"
 	"log"
 	"os"
 	"os/exec"
 	"strings"
+
+	"github.com/cyjme/gen/util"
 
 	"github.com/spf13/cobra"
 )
@@ -25,7 +26,7 @@ var newCmd = &cobra.Command{
 		}
 		projectName := args[0]
 
-        command := exec.Command("git", "clone", "--depth", "1", "https://github.com/cyjme/gen-template.git", projectName)
+		command := exec.Command("git", "clone", "--depth", "1", "https://github.com/cyjme/gen-template.git", projectName)
 		var stdBuffer bytes.Buffer
 
 		mw := io.MultiWriter(os.Stdout, &stdBuffer)

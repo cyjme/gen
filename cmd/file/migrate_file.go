@@ -1,10 +1,11 @@
 package file
 
 import (
-	"gen/util"
 	"io/ioutil"
 	"os"
 	"strings"
+
+	"github.com/cyjme/gen/util"
 )
 
 type MigrateFile struct {

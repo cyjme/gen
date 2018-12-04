@@ -15,7 +15,7 @@
 package cmd
 
 import (
-	"gen/cmd/file"
+	"github.com/cyjme/gen/cmd/file"
 	"github.com/spf13/cobra"
 )
 
@@ -23,7 +23,7 @@ import (
 var controllerCmd = &cobra.Command{
 	Use:   "controller",
 	Short: "add controller",
-	Long: `add controller`,
+	Long:  `add controller`,
 	Run: func(cmd *cobra.Command, args []string) {
 		controllerFile := file.NewControllerFile(modelFlags.name)
 		controllerFile.Write()
@@ -37,7 +37,7 @@ func init() {
 	// Here you will define your flags and configuration settings.
 	//controllerCmd.PersistentFlags().StringP("model", "m","", "the api use model")
 	controllerCmd.Flags().StringVarP(&modelFlags.name, "model", "m", "user", "the api use which model")
-	controllerCmd.Flags().StringSliceVarP(&modelFlags.fields, "fields", "f", []string{"name:string","email:string"}, "fields is the model's field slice")
+	controllerCmd.Flags().StringSliceVarP(&modelFlags.fields, "fields", "f", []string{"name:string", "email:string"}, "fields is the model's field slice")
 	controllerCmd.Flags().BoolVarP(&modelFlags.needBase, "base", "b", true, "the model needs base ID/CreatedAt/UpdatedAt?")
 
 	// Cobra supports Persistent Flags which will work for this command

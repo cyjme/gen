@@ -15,11 +15,12 @@
 package cmd
 
 import (
-	"gen/cmd/vars"
-	"github.com/spf13/cobra"
 	"log"
 	"os"
 	"strings"
+
+	"github.com/cyjme/gen/cmd/vars"
+	"github.com/spf13/cobra"
 )
 
 // addCmd represents the add command

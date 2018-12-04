@@ -1,10 +1,11 @@
 package file
 
 import (
-	"gen/cmd/vars"
-	"gen/util"
 	"os"
 	"strings"
+
+	"github.com/cyjme/gen/cmd/vars"
+	"github.com/cyjme/gen/util"
 )
 
 type ModelFile struct {
