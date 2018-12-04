@@ -33,8 +33,8 @@ var rootCmd = &cobra.Command{
 
 example: 
 	gen new blog-project
-	gen add --model article --fields title:string,content:string,userId:int
-	gen add --model user --fields name:string,email:string,password:string
+	gen add api --model article --fields title:string,content:string,userId:int
+	gen add api --model user --fields name:string,email:string,password:string
 `,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:

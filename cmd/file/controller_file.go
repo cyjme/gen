@@ -74,8 +74,6 @@ func (ctl *{{ModelName}}Controller) Create(c *gin.Context) {
 		return
 	}
 
-	{{modelName}}.Get()
-
 	c.JSON(http.StatusOK, {{modelName}})
 }
 
@@ -117,7 +115,7 @@ func (ctl *{{ModelName}}Controller) Put(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, {{modelName}})
+	c.JSON(http.StatusOK, nil)
 }
 
 // @Summary Patch
@@ -140,7 +138,7 @@ func (ctl *{{ModelName}}Controller) Patch(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, {{modelName}})
+	c.JSON(http.StatusOK, nil)
 }
 
 // @Summary List
@@ -171,13 +169,16 @@ func (ctl *{{ModelName}}Controller) List(c *gin.Context) {
 		limit = -1
 	}
 
-	{{modelName}}s, err := {{modelName}}.List(rawQuery, rawOrder, offset, limit)
+	{{modelName}}s, total, err := {{modelName}}.List(rawQuery, rawOrder, offset, limit)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, err.Error())
 		return
 	}
 
-	c.JSON(http.StatusOK, {{modelName}}s)
+	c.JSON(http.StatusOK, gin.H{
+		"total": total,
+		"data": {{modelName}}s,
+	})
 }
 
 

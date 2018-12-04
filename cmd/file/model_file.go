@@ -83,14 +83,12 @@ func ({{modelName}} *{{ModelName}}) Insert() error {
 
 func ({{modelName}} *{{ModelName}}) Patch() error {
 	err := app.DB.Model({{modelName}}).Updates({{modelName}}).Error
-	{{modelName}}.Get()
 
 	return err
 }
 
 func ({{modelName}} *{{ModelName}}) Update() error {
 	err := app.DB.Save({{modelName}}).Error
-	{{modelName}}.Get()
 
 	return err
 }
@@ -99,28 +97,30 @@ func ({{modelName}} *{{ModelName}}) Delete() error {
 	return app.DB.Delete({{modelName}}).Error
 }
 
-func ({{modelName}} *{{ModelName}}) List(rawQuery string, rawOrder string, offset int, limit int) (*[]{{ModelName}}, error) {
+func ({{modelName}} *{{ModelName}}) List(rawQuery string, rawOrder string, offset int, limit int) (*[]{{ModelName}}, int, error) {
 	{{modelName}}s := []{{ModelName}}{}
+	total := 0
 
 	db := app.DB.Model({{modelName}})
 
 	db, err := buildWhere(rawQuery, db)
 	if err != nil {
-		return nil, err
+		return &{{modelName}}s, total, err
 	}
 
 	db, err = buildOrder(rawOrder, db)
 	if err != nil {
-		return nil, err
+		return &{{modelName}}s, total, err
 	}
 
 	db.Offset(offset).
 		Limit(limit).
-		Find(&{{modelName}}s)
+		Find(&{{modelName}}s).
+		Count(&total)
 
 	err = db.Error
 
-	return &{{modelName}}s, err
+	return &{{modelName}}s, total, err
 }
 
 func ({{modelName}} *{{ModelName}}) Get() (*{{ModelName}}, error) {
