@@ -186,7 +186,7 @@ func (ctl *{{ModelName}}Controller) List(c *gin.Context) {
 // @Tags    {{ModelName}}
 // @Param  {{modelName}}Id path string true "{{modelName}}Id"
 // @Success 200 {object} model.{{ModelName}} "{{modelName}} object"
-// @Router /{{modelName}}s/{{modelName}}Id [get]
+// @Router /{{modelName}}s/{{{modelName}}Id} [get]
 func (ctl *{{ModelName}}Controller) Get(c *gin.Context) {
 	{{modelName}} := &model.{{ModelName}}{}
 	{{modelName}}.Id = c.Param("{{modelName}}Id")
