@@ -29,7 +29,7 @@ create database
 go mod tidy
 
 ### step-4 add api
-gen add --model article --fields title:string,content:string,userId:int
+gen add api --model article --fields title:string,content:string,userId:int
 
 ### step-5 run
 go run main.go
