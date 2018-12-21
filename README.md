@@ -5,9 +5,9 @@
 ## Example:
 gen new blog-project
 
-gen add --model article --fields title:string,content:string,userId:int
+gen add api --model article --fields title:string,content:string,userId:int
 
-gen add -m user -f name:string,email:string,password:string
+gen add api -m user -f name:string,email:string,password:string
 
 
 ## Detail:
