@@ -15,11 +15,6 @@
 package cmd
 
 import (
-	"log"
-	"os"
-	"strings"
-
-	"github.com/cyjme/gen/cmd/vars"
 	"github.com/spf13/cobra"
 )
 
@@ -35,12 +30,6 @@ var addCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(addCmd)
-	pwd, err := os.Getwd()
-	if err != nil {
-		log.Println("get pwd error", err)
-	}
-	pwdSlice := strings.Split(pwd, "/")
-	vars.ProjectName = pwdSlice[len(pwdSlice)-1]
 
 	// Here you will define your flags and configuration settings.
 

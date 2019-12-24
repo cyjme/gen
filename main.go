@@ -14,8 +14,22 @@
 
 package main
 
-import "github.com/cyjme/gen/cmd"
+import (
+	"log"
+	"os"
+	"strings"
+
+	"github.com/cyjme/gen/cmd"
+	"github.com/cyjme/gen/cmd/vars"
+)
 
 func main() {
+	pwd, err := os.Getwd()
+	if err != nil {
+		log.Println("get pwd error", err)
+	}
+	pwdSlice := strings.Split(pwd, "/")
+	vars.ProjectName = pwdSlice[len(pwdSlice)-1]
+
 	cmd.Execute()
 }

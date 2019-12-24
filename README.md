@@ -15,6 +15,8 @@ gen add api -m user -f name:string,email:string,password:string
 ### step-0 install gen
 go get -u github.com/cyjme/gen
 
+go get -u github.com/swaggo/swag/cmd/swag
+
 ### step-1 create project
 gen new blog-project
 
