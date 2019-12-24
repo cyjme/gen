@@ -4,8 +4,8 @@ import (
 	"os"
 	"strings"
 
-	"github.com/cyjme/gen/cmd/vars"
-	"github.com/cyjme/gen/util"
+	"gen/cmd/vars"
+	"gen/util"
 )
 
 type ControllerFile struct {

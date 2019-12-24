@@ -13,7 +13,7 @@ gen add api -m user -f name:string,email:string,password:string
 ## Detail:
 
 ### step-0 install gen
-go get -u github.com/cyjme/gen
+go get -u gen
 
 go get -u github.com/swaggo/swag/cmd/swag
 
