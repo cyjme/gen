@@ -4,8 +4,8 @@ import (
 	"os"
 	"strings"
 
-	"gen/cmd/vars"
-	"gen/util"
+	"github.com/cyjme/gen/cmd/vars"
+	"github.com/cyjme/gen/util"
 )
 
 type ModelFile struct {

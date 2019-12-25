@@ -19,8 +19,8 @@ import (
 	"os"
 	"strings"
 
-	"gen/cmd"
-	"gen/cmd/vars"
+	"github.com/cyjme/gen/cmd"
+	"github.com/cyjme/gen/cmd/vars"
 )
 
 func main() {

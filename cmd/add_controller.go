@@ -15,7 +15,8 @@
 package cmd
 
 import (
-	"gen/cmd/file"
+	"github.com/cyjme/gen/cmd/file"
+
 	"github.com/spf13/cobra"
 )
 

@@ -5,7 +5,7 @@ import (
 	"os"
 	"strings"
 
-	"gen/util"
+	"github.com/cyjme/gen/util"
 )
 
 type MigrateFile struct {
